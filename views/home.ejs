@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+ <style>
+   nav{
+      background-color: rgb(60,255,0);
+      height: 8vh;
+   }
+   /* hr{
+     color: white;
+     margin: 0;
+     padding: 0;
+     border-top: 1px solid white;
+   } */
+   body{
+     background: black;
+     color: white;
+   }
+   img{
+     height:200px;
+     width: 200px;
+     border: 4px solid rgb(60,255,0);
+   }
+   .col-sm-2{
+     /* margin-left: 5px;
+     margin-right: 5px; */
+   }
+   h5{
+     margin: 10px 5px;
+     text-align: center;
+   }
+   span{
+     color: rgb(60,255,0);
+   }
+
+
+
+ </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light ">
+  <a class="navbar-brand"  href="/home">MediaWorks</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/index">Player<span class="sr-only">(current)</span></a>
+      </li>
+
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="/search" method="post">
+      
+      <a href="/users/logout" class="btn btn-secondary">Logout</a>
+    </form>
+
+  </div>
+</nav>
+<!-- <hr> -->
+
+<!-- Trending Songs -->
+
+    <h2 style="margin-left: 15px;margin-top: 30px;margin-bottom: 30px;">Trending <span>Songs</span>  </h2>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-2">
+          <audio id="myAudio1">
+              <source src="<%= audioOne %>" />
+          </audio>
+          <img src="<%=firstAlbumImage%>" onClick="togglePlay1()" />
+          <h5>Levitating (feat Dababy)</h5>
+        </div>
+       <div class="col-xl-2">
+         <audio id="myAudio2">
+             <source src="<%= audioTwo %>" />
+         </audio>
+         <img src="<%=secondAlbumImage%>" onClick="togglePlay2()" alt="">
+         <h5>Shiddat Title Track</h5>
+        </div>
+        <div class="col-xl-2">
+          <audio id="myAudio3">
+              <source src="<%= audioThree %>" />
+          </audio>
+        <img src="<%=thirdAlbumImage%>" onClick="togglePlay3()" alt="">
+        <h5><%= thirdAlbumName %></h5>
+        </div>
+        <div class="col-xl-2">
+          <audio id="myAudio4">
+              <source src="<%= audioFour %>" />
+          </audio>
+         <img src="<%=fourthAlbumImage%>" onClick="togglePlay4()" alt="">
+         <h5><%= fourthAlbumName %></h5>
+        </div>
+        <div class="col-xl-2">
+          <audio id="myAudio5">
+              <source src="<%= audioFive %>" />
+          </audio>
+         <img src="<%=fifthAlbumImage%>" onClick="togglePlay5()" alt="">
+         <h5><%= fifthAlbumName %></h5>
+        </div>
+        <div class="col-xl-2">
+          <audio id="myAudio6">
+              <source src="<%= audioSix %>" />
+          </audio>
+         <img src="<%=sixthAlbumImage%>" onClick="togglePlay6()" alt="">
+         <h5>Raataan Lambiyan(From "Shershaah")</h5>
+        </div>
+      </div>
+     </div>
+
+<!-- Old Hits    -->
+     <h2 style="margin-left: 15px;margin-top: 10px;margin-bottom: 30px;">Old <span> Hits</span></h2>
+     <div class="container-fluid">
+       <div class="row">
+         <div class="col-xl-2">
+           <audio id="myAudio7">
+               <source src="<%= audioSeven %>" />
+           </audio>
+           <img src="<%=seventhAlbumImage%>" onClick="togglePlay7()" />
+           <h5>Tu Jaane Na</h5>
+         </div>
+         <div class="col-xl-2">
+           <audio id="myAudio8">
+               <source src="<%= audioEight %>" />
+           </audio>
+          <img src="<%=eightAlbumImage%>" onClick="togglePlay8()" alt="">
+          <h5>Mitwa</h5>
+         </div>
+         <div class="col-xl-2">
+           <audio id="myAudio9">
+               <source src="<%= audioNine %>" />
+           </audio>
+         <img src="<%=ninethAlbumImage%>" onClick="togglePlay9()" alt="">
+         <h5><%= ninethAlbumName %></h5>
+         </div>
+         <div class="col-xl-2">
+           <audio id="myAudio10">
+               <source src="<%= audioTen %>" />
+           </audio>
+          <img src="<%=tenthAlbumImage%>" onClick="togglePlay10()" alt="">
+          <h5>To Brazil!</h5>
+         </div>
+         <div class="col-xl-2">
+           <audio id="myAudio11">
+               <source src="<%= audioEleven %>" />
+           </audio>
+          <img src="<%=eleventhAlbumImage%>" onClick="togglePlay11()" alt="">
+          <h5>Night Changes</h5>
+         </div>
+         <div class="col-xl-2">
+           <audio id="myAudio12">
+               <source src="<%= audioTwelve %>" />
+           </audio>
+          <img src="<%=twelvethAlbumImage%>" onClick="togglePlay12()" alt="">
+          <h5>Talking to the Moon</h5>
+         </div>
+       </div>
+      </div>
+
+
+<!-- Romantic Songs -->
+      <h2 style="margin-left: 15px;margin-top: 10px;margin-bottom: 30px;">Romantic <span> Songs</span></h2>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xl-2">
+            <audio id="myAudio13">
+                <source src="<%= audioThirteen %>" />
+            </audio>
+            <img src="<%=thirteenAlbumImage%>" onClick="togglePlay13()" />
+            <h5>Perfect</h5>
+          </div>
+          <div class="col-xl-2">
+            <audio id="myAudio14">
+                <source src="<%= audioFourteen %>" />
+            </audio>
+           <img src="<%=fourteenAlbumImage%>" onClick="togglePlay14()" alt="">
+           <h5>Agar Tum Saath Ho</h5>
+          </div>
+          <div class="col-xl-2">
+            <audio id="myAudio15">
+                <source src="<%= audioFifteen %>" />
+            </audio>
+          <img src="<%=fifteenAlbumImage%>" onClick="togglePlay15()" alt="">
+          <h5>Te Amo (Duet)</h5>
+          </div>
+          <div class="col-xl-2">
+            <audio id="myAudio16">
+                <source src="<%= audioSixteen %>" />
+            </audio>
+           <img src="<%=sixteenAlbumImage%>" onClick="togglePlay16()" alt="">
+           <h5>All of Me</h5>
+          </div>
+          <div class="col-xl-2">
+            <audio id="myAudio17">
+                <source src="<%= audioSeventeen %>" />
+            </audio>
+           <img src="<%=seventeenAlbumImage%>" onClick="togglePlay17()" alt="">
+           <h5>Tujhe Kitna Chahne Lage(From "Kabir Singh")</h5>
+          </div>
+          <div class="col-xl-2">
+            <audio id="myAudio18">
+                <source src="<%= audioEighteen %>" />
+            </audio>
+           <img src="<%=eighteenAlbumImage%>" onClick="togglePlay18()" alt="">
+           <h5>Ishq Wala Love</h5>
+          </div>
+        </div>
+       </div>
+      <!-- <div class="fixed-bottom " id="player" style=" background-color: #f1c40f;">
+    <div class="container" >
+        <audio id="audio0" data1="" data2="" src="" controls volume loop preload="auto"></audio>
+    </div>
+</div> -->
+
+<script src="/js/home.js" ></script>
+<script>
+    //player loop
+       var x = document.getElementById("audio0");
+
+       function enableLoop() {
+           x.loop = true;
+       }
+
+       function disableLoop() {
+           x.loop = false;
+       }
+</script>
+  </body>
+</html>
