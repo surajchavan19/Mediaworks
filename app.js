@@ -64,7 +64,7 @@ app.use("/users",require('./routes/users'));
 
 var name = "";
 var image = "";
-var port = process.env.PORT || 8888;
+
 var obj = "";
 var tc = "";
 var album = "";
@@ -132,7 +132,23 @@ var spotifyApi = new SpotifyWebApi({
   clientSecret: 'cf52a3a9ad3a4d57812bab7d1786e9e6',
   redirectUri: 'http://www.example.com/callback'
 });
-spotifyApi.setAccessToken('BQBpSj8NC5Lw5cH7guu6S361E2d_ApYEzHmS6oMcL67WIrsxrY9RaFbBm3ARAFbevXtfGpuwzWwCWU0SZM2DrRrlblHNcSVsJTF8G9ovHVzdHhCj9ECsnzkpnsrfx9VCUVuxfDuRbhkfSWcsMXoIOpTPOxVO8DSucsrYF4Y417xAfDVkvb0');
+// spotifyApi.setAccessToken('BQDcMAQegfc_Qy1PYo6g-yBUP0-pd2v_307FAHm9vaoARFTsil4wsqWiVPXQ4Uhg5vJtVC4LTgMICHQFPDhsnILhd8g5A1p8Q4TjwbGUmxgWL77DdU0IdupLFDuYrHhID3rNgYkX4exZC14BzG1z99mwp_11MzmZmIGlMaJl5CiabiupSaA');
+
+spotifyApi.clientCredentialsGrant().then(
+    function (data) {
+        console.log('The access token expires in ' + data.body.access_token);
+        console.log('The access token is ' + data.body.access_token);
+
+        // Save the access token so that it's used in future calls
+        spotifyApi.setAccessToken(data.body.access_token);
+    },
+    function (err) {
+        console.log(
+            'Something went wrong when retrieving an access token',
+            err.message
+        );
+    }
+);
 
 app.get("/",function(req,res){
   res.render("login")
@@ -373,7 +389,7 @@ app.get("/home", function(req, res) {
       spotifyApi.getArtistTopTracks('0cwmNvclzPd8mQnoHuIksj','GB' )
 
         .then(function(data) {
-          trackTen = data.body.tracks[7].preview_url;
+          trackTen = data.body.tracks[6].preview_url;
 
         }, function(err) {
           console.error(err);
@@ -381,7 +397,7 @@ app.get("/home", function(req, res) {
       spotifyApi.getArtistTopTracks('4AK6F7OLvEQ5QYCBNiQWHq', 'GB')
 
         .then(function(data) {
-          trackEleven = data.body.tracks[1].preview_url;
+          trackEleven = data.body.tracks[0].preview_url;
 
         }, function(err) {
           console.error(err);
@@ -491,7 +507,12 @@ app.get('/search/:data', function(req, res) {
 //   }, function(err) {
 //     console.log('Something went wrong!', err);
 //   });
+let port = process.env.PORT;
+if (port == null || port =="") {
+  port = 3000;
+}
+
 
 app.listen(port, function(req, res) {
-  console.log("listening at 8888");
+  console.log("listening at 3000");
 });
