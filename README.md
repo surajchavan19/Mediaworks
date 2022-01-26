@@ -9,7 +9,9 @@ Node.js, Express, EJS, Passport.js, MongoDB, CSS, JavaScript, Mongoose, bcrypt.
 
 ## Setup
 1) Download the .zip file or copy the repository on github
-2) Open the folder
-3) Open the terminal
-4) Type node app.js / nodemon app.js
-5) Open localhost on your browser
+2) In the config folder create a file and add your mongodb atlas username password and DB_name as follows
+  module.exports = {
+  MongoURI: 'mongodb+srv://Username:password@cluster0.ge2ev.mongodb.net/DB_name?retryWrites=true&w=majority'
+}
+5) Type node app.js / nodemon app.js
+6) Open localhost on your browser
