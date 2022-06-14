@@ -4,44 +4,56 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
 
- <style>
-   nav{
-      background-color: rgb(60,255,0);
-      height: 8vh;
-   }
-   /* hr{
-     color: white;
-     margin: 0;
-     padding: 0;
-     border-top: 1px solid white;
-   } */
-   body{
-     background: black;
-     color: white;
-   }
-   img{
-     height:200px;
-     width: 200px;
-     border: 4px solid rgb(60,255,0);
-   }
-   .col-sm-2{
-     /* margin-left: 5px;
-     margin-right: 5px; */
-   }
-   h5{
-     margin: 10px 5px;
-     text-align: center;
-   }
-   span{
-     color: rgb(60,255,0);
-   }
-  .col-xl-2{
-    text-align: center;
-    align-items: center;
-  }
-  /* CORE STYLES */
+      input[type=text] {
+  width:40%;
+  padding: 12px 0px;
+  margin: 8px 130px;
+  box-sizing: border-box;
+  border: 1px solid #555;
+  outline: none;
+  border-radius: 30px;
+}
+audio{
+  width: 70%;
+
+  left: 30%;
+}
+/* input[type=text] {
+  border: 2px solid rgb(60,255,0);
+  border-radius: 30px;
+  background-color: grey;
+} */
+/* input[type=text]:focus {
+  background-color: dark grey;
+  color: white
+} */
+      .container{
+        text-align: center;
+      }
+
+body{
+  background: black;
+}
+nav{
+   background-color: rgb(60,255,0);
+   height: 8vh;
+}
+h1{
+  color: white;
+}
+form{
+  text-align: center;
+}
+img{
+  opacity: 1;
+  height: 325px;
+  width: 325px;
+  border: 3px solid rgb(60,255,0);
+}
+/* CORE STYLES */
 :root {
   --primary-color: rgba(13, 110, 139, 0.75);
   --overlay-color: rgba(24, 39, 51 , 0.85);
@@ -134,29 +146,38 @@ body {
   height: 50px;
   opacity: 0;
 }
+@media (max-width: 600px) {
+
+}
 @media (min-width: 991px) {
   .menu-wrap .hamburger {
-    width: 76px;
-    height: 76px;
+    width: 70px;
+    height: 75px;
   }
+
  }
  @media (max-width: 991px) {
-   .menu-wrap .hamburger {
-     width: 77px;
-     height: 77px;
+
+   @media (min-width: 575px ){
+     .menu-wrap .hamburger {
+       width: 85px;
+       height: 91px;
+     }
+   }
+   @media (max-width: 575px){
+     .menu-wrap .hamburger {
+       width: 85px;
+       height: 100px;
+     }
    }
   }
- /* @media only screen and (max-width: 991px) {
-   .menu-wrap .hamburger {
-     height: 79px;
-     width:79px;
-   }
- } */
+
 .menu-wrap .hamburger {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
+
   padding: 1rem;
   background: var(--primary-color);
   display: flex;
@@ -273,10 +294,10 @@ body {
   transition: color 0.4s ease;
 }
 
- </style>
-  </head>
 
-  <body>
+    </style>
+  </head>
+  <body >
     <!-- <nav class="navbar navbar-expand-lg navbar-light ">
   <a class="navbar-brand"  href="/home">MediaWorks</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -286,204 +307,59 @@ body {
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="/index">Player<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
       </li>
-  </ul>
 
 
-      <a href="/users/logout" class="btn btn-secondary">Logout</a>
-
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="/search" method="post">
+      <input class="form-control " type="text" placeholder="Search" name="track" autocomplete="off" style="text-align:center;margin:0;margin-right: 24vw;width: 40vw;">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
 
   </div>
 </nav> -->
 <div class="container-fluid" style="background: rgb(60,255,0);padding: 10px; top:0; position: fixed;z-index:1;color:black">
-  <h2 style="text-align:center;padding-top:10px;">Media<span style="color:blue;">W</span>orks </h1>
-  <div class="menu-wrap">
-      <input type="checkbox" class="toggler">
-      <div class="hamburger"><div></div></div>
-      <div class="menu">
+  <form class="form-inline my-2 my-lg-0" action="/search" method="post">
+    <input class="form-control " type="text" placeholder="Search" name="track" autocomplete="off" style="text-align:center;margin-left: 32.5vw;margin-right: 4vw;width: 30vw;">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+
+
+<div class="menu-wrap" >
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
         <div>
-          <div>
-            <ul>
-              <li><a href="/index">Music Player</a></li>
-              <li><a href="/users/logout">Log out</a></li>
-
-            </ul>
-          </div>
+          <ul>
+            <li><a href="/home">Home</a></li>
+            <li><a href="/users/logout">Log out</a></li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
 </div>
+    <!-- <div class="container-fluid fixed-top" style="background-color: rgb(60,255,0);padding: 10px;">
+
+      <form class="" action="/search" method="post">
+        <input type="text" name="track" >
+        <button type="submit" name="">Search</button>
+
+      </form>
+    </div> -->
 
 
-<!-- <hr> -->
+ <div class="container-fluid" style="text-align: center;padding-top: 20vh;">
+   <img src="<%= img %>"><br>
+    <h1 style="margin-top: 5vh"><%= n %></h1>
+ </div>
 
-<!-- Trending Songs -->
+ <div class="container-fluid fixed-bottom" style="background-color: rgb(60,255,0);padding: 10px;">
+   <audio controls src="<%= h %>" class="cover-audio" style="margin: 12px;margin-left: 13%;"></audio>
+ </div>
 
-    <h2 style="margin-left: 15px;margin-top: 14vh;margin-bottom: 30px;">Trending <span>Songs</span>  </h2>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio1">
-              <source src="<%= audioOne %>" />
-          </audio>
-          <img src="<%=firstAlbumImage%>" onClick="togglePlay1()" />
-          <h5>Levitating (feat Dababy)</h5>
-        </div>
-       <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6" >
-         <audio id="myAudio2">
-             <source src="<%= audioTwo %>" />
-         </audio>
-         <img src="<%=secondAlbumImage%>" onClick="togglePlay2()" alt="">
-         <h5>Shiddat Title Track</h5>
-        </div>
-        <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio3">
-              <source src="<%= audioThree %>" />
-          </audio>
-        <img src="<%=thirdAlbumImage%>" onClick="togglePlay3()" alt="">
-        <h5><%= thirdAlbumName %></h5>
-        </div>
-        <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio4">
-              <source src="<%= audioFour %>" />
-          </audio>
-         <img src="<%=fourthAlbumImage%>" onClick="togglePlay4()" alt="">
-         <h5><%= fourthAlbumName %></h5>
-        </div>
-        <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio5">
-              <source src="<%= audioFive %>" />
-          </audio>
-         <img src="<%=fifthAlbumImage%>" onClick="togglePlay5()" alt="">
-         <h5><%= fifthAlbumName %></h5>
-        </div>
-        <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio6">
-              <source src="<%= audioSix %>" />
-          </audio>
-         <img src="<%=sixthAlbumImage%>" onClick="togglePlay6()" alt="">
-         <h5>Raataan Lambiyan(From "Shershaah")</h5>
-        </div>
-      </div>
-     </div>
-
-<!-- Old Hits    -->
-     <h2 style="margin-left: 15px;margin-top: 10px;margin-bottom: 30px;">Old <span> Hits</span></h2>
-     <div class="container-fluid">
-       <div class="row">
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio7">
-               <source src="<%= audioSeven %>" />
-           </audio>
-           <img src="<%=seventhAlbumImage%>" onClick="togglePlay7()" />
-           <h5>Tu Jaane Na</h5>
-         </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio8">
-               <source src="<%= audioEight %>" />
-           </audio>
-          <img src="<%=eightAlbumImage%>" onClick="togglePlay8()" alt="">
-          <h5>Mitwa</h5>
-         </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio9">
-               <source src="<%= audioNine %>" />
-           </audio>
-         <img src="<%=ninethAlbumImage%>" onClick="togglePlay9()" alt="">
-         <h5><%= ninethAlbumName %></h5>
-         </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio10">
-               <source src="<%= audioTen %>" />
-           </audio>
-          <img src="<%=tenthAlbumImage%>" onClick="togglePlay10()" alt="">
-          <h5>To Brazil!</h5>
-         </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio11">
-               <source src="<%= audioEleven %>" />
-           </audio>
-          <img src="<%=eleventhAlbumImage%>" onClick="togglePlay11()" alt="">
-          <h5>Night Changes</h5>
-         </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio12">
-               <source src="<%= audioTwelve %>" />
-           </audio>
-          <img src="<%=twelvethAlbumImage%>" onClick="togglePlay12()" alt="">
-          <h5>Talking to the Moon</h5>
-         </div>
-       </div>
-      </div>
-
-
-<!-- Romantic Songs -->
-      <h2 style="margin-left: 15px;margin-top: 10px;margin-bottom: 30px;">Romantic <span> Songs</span></h2>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio13">
-                <source src="<%= audioThirteen %>" />
-            </audio>
-            <img src="<%=thirteenAlbumImage%>" onClick="togglePlay13()" />
-            <h5>Perfect</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio14">
-                <source src="<%= audioFourteen %>" />
-            </audio>
-           <img src="<%=fourteenAlbumImage%>" onClick="togglePlay14()" alt="">
-           <h5>Agar Tum Saath Ho</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio15">
-                <source src="<%= audioFifteen %>" />
-            </audio>
-          <img src="<%=fifteenAlbumImage%>" onClick="togglePlay15()" alt="">
-          <h5>Te Amo (Duet)</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio16">
-                <source src="<%= audioSixteen %>" />
-            </audio>
-           <img src="<%=sixteenAlbumImage%>" onClick="togglePlay16()" alt="">
-           <h5>All of Me</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio17">
-                <source src="<%= audioSeventeen %>" />
-            </audio>
-           <img src="<%=seventeenAlbumImage%>" onClick="togglePlay17()" alt="">
-           <h5>Tujhe Kitna Chahne Lage(From "Kabir Singh")</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio18">
-                <source src="<%= audioEighteen %>" />
-            </audio>
-           <img src="<%=eighteenAlbumImage%>" onClick="togglePlay18()" alt="">
-           <h5>Ishq Wala Love</h5>
-          </div>
-        </div>
-       </div>
-      <!-- <div class="fixed-bottom " id="player" style=" background-color: #f1c40f;">
-    <div class="container" >
-        <audio id="audio0" data1="" data2="" src="" controls volume loop preload="auto"></audio>
-    </div>
-</div> -->
-
-<script src="/js/home.js" ></script>
-<script>
-    //player loop
-       var x = document.getElementById("audio0");
-
-       function enableLoop() {
-           x.loop = true;
-       }
-
-       function disableLoop() {
-           x.loop = false;
-       }
-</script>
+    <!-- <a href="<%= h %>">link</a>
   </body>
 </html>
