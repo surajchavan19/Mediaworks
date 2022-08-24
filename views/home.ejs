@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -317,155 +319,68 @@ body {
 
 
 <!-- <hr> -->
+<% var song = " ";var Play = " ";var j=0; %>
 
-<!-- Trending Songs -->
+<!-- Top 50 Global -->
 
-    <h2 style="margin-left: 15px;margin-top: 14vh;margin-bottom: 30px;">Trending <span>Songs</span>  </h2>
+    <h2 style="margin-left: 15px;margin-top: 14vh;margin-bottom: 30px;">Top 50 -<span> Global</span>  </h2>
     <div class="container-fluid">
       <div class="row">
+
+        <% for(var i=0;i<top50GlobalAudio.length;i++) { %>
+          <% song = "myAudio" + (j+1)
+             Play = "togglePlay"+"(" +(j+1)+ ")" %>
         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio1">
-              <source src="<%= audioOne %>" />
-          </audio>
-          <img src="<%=firstAlbumImage%>" onClick="togglePlay1()" />
-          <h5>Levitating (feat Dababy)</h5>
+          <audio id="<%=song%>"><source src="<%= top50GlobalAudio[i] %>" />  </audio>
+              <img src="<%=top50GlobalImage[i]%>" onClick="<%=Play%>" />
+              <h5 class="text"><%= top50GlobalTrackName[i] %></h5>
         </div>
-       <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6" >
-         <audio id="myAudio2">
-             <source src="<%= audioTwo %>" />
-         </audio>
-         <img src="<%=secondAlbumImage%>" onClick="togglePlay2()" alt="">
-         <h5>Shiddat Title Track</h5>
-        </div>
-        <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio3">
-              <source src="<%= audioThree %>" />
-          </audio>
-        <img src="<%=thirdAlbumImage%>" onClick="togglePlay3()" alt="">
-        <h5><%= thirdAlbumName %></h5>
-        </div>
-        <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio4">
-              <source src="<%= audioFour %>" />
-          </audio>
-         <img src="<%=fourthAlbumImage%>" onClick="togglePlay4()" alt="">
-         <h5><%= fourthAlbumName %></h5>
-        </div>
-        <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio5">
-              <source src="<%= audioFive %>" />
-          </audio>
-         <img src="<%=fifthAlbumImage%>" onClick="togglePlay5()" alt="">
-         <h5><%= fifthAlbumName %></h5>
-        </div>
-        <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-          <audio id="myAudio6">
-              <source src="<%= audioSix %>" />
-          </audio>
-         <img src="<%=sixthAlbumImage%>" onClick="togglePlay6()" alt="">
-         <h5>Raataan Lambiyan(From "Shershaah")</h5>
-        </div>
+        <% j++ %>
+          <% } %>
       </div>
+
      </div>
 
-<!-- Old Hits    -->
-     <h2 style="margin-left: 15px;margin-top: 10px;margin-bottom: 30px;">Old <span> Hits</span></h2>
+<!-- Top 50 India -->
+
+     <h2 style="margin-left: 15px;margin-top: 5vh;margin-bottom: 30px;">Top 50 -<span> India</span>  </h2>
      <div class="container-fluid">
        <div class="row">
+
+         <% for(var i=0;i<top50IndiaAudio.length;i++) { %>
+           <% song = "myAudio" + (j+1)
+              Play = "togglePlay"+"(" +(j+1)+ ")" %>
          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio7">
-               <source src="<%= audioSeven %>" />
-           </audio>
-           <img src="<%=seventhAlbumImage%>" onClick="togglePlay7()" />
-           <h5>Tu Jaane Na</h5>
+           <audio id="<%=song%>"><source src="<%= top50IndiaAudio[i] %>" />  </audio>
+               <img src="<%=top50IndiaImage[i]%>" onClick="<%=Play%>" />
+               <h5 class="text"><%= top50IndiaTrackName[i] %></h5>
          </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio8">
-               <source src="<%= audioEight %>" />
-           </audio>
-          <img src="<%=eightAlbumImage%>" onClick="togglePlay8()" alt="">
-          <h5>Mitwa</h5>
-         </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio9">
-               <source src="<%= audioNine %>" />
-           </audio>
-         <img src="<%=ninethAlbumImage%>" onClick="togglePlay9()" alt="">
-         <h5><%= ninethAlbumName %></h5>
-         </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio10">
-               <source src="<%= audioTen %>" />
-           </audio>
-          <img src="<%=tenthAlbumImage%>" onClick="togglePlay10()" alt="">
-          <h5>To Brazil!</h5>
-         </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio11">
-               <source src="<%= audioEleven %>" />
-           </audio>
-          <img src="<%=eleventhAlbumImage%>" onClick="togglePlay11()" alt="">
-          <h5>Night Changes</h5>
-         </div>
-         <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-           <audio id="myAudio12">
-               <source src="<%= audioTwelve %>" />
-           </audio>
-          <img src="<%=twelvethAlbumImage%>" onClick="togglePlay12()" alt="">
-          <h5>Talking to the Moon</h5>
-         </div>
+         <% j++ %>
+           <% } %>
        </div>
-      </div>
+
+<!-- All Out 2010s -->
+
+       <h2 style="margin-left: 15px;margin-top: 5vh;margin-bottom: 30px;">All Out <span> 2010s</span>  </h2>
+       <div class="container-fluid">
+         <div class="row">
+
+           <% for(var i=0;i<top50IndiaAudio.length;i++) { %>
+             <% song = "myAudio" + (j+1)
+                Play = "togglePlay"+"(" +(j+1)+ ")" %>
+           <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
+             <audio id="<%=song%>"><source src="<%= allOut2010sAudio[i] %>" />  </audio>
+                 <img src="<%=allOut2010sImage[i]%>" onClick="<%=Play%>" />
+                 <h5 class="text"><%= allOut2010sTrackName[i] %></h5>
+           </div>
+           <% j++ %>
+             <% } %>
+         </div>
 
 
-<!-- Romantic Songs -->
-      <h2 style="margin-left: 15px;margin-top: 10px;margin-bottom: 30px;">Romantic <span> Songs</span></h2>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio13">
-                <source src="<%= audioThirteen %>" />
-            </audio>
-            <img src="<%=thirteenAlbumImage%>" onClick="togglePlay13()" />
-            <h5>Perfect</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio14">
-                <source src="<%= audioFourteen %>" />
-            </audio>
-           <img src="<%=fourteenAlbumImage%>" onClick="togglePlay14()" alt="">
-           <h5>Agar Tum Saath Ho</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio15">
-                <source src="<%= audioFifteen %>" />
-            </audio>
-          <img src="<%=fifteenAlbumImage%>" onClick="togglePlay15()" alt="">
-          <h5>Te Amo (Duet)</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio16">
-                <source src="<%= audioSixteen %>" />
-            </audio>
-           <img src="<%=sixteenAlbumImage%>" onClick="togglePlay16()" alt="">
-           <h5>All of Me</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio17">
-                <source src="<%= audioSeventeen %>" />
-            </audio>
-           <img src="<%=seventeenAlbumImage%>" onClick="togglePlay17()" alt="">
-           <h5>Tujhe Kitna Chahne Lage(From "Kabir Singh")</h5>
-          </div>
-          <div class="col-xl-2 col-md-4 col-sm-6 col-xs-6">
-            <audio id="myAudio18">
-                <source src="<%= audioEighteen %>" />
-            </audio>
-           <img src="<%=eighteenAlbumImage%>" onClick="togglePlay18()" alt="">
-           <h5>Ishq Wala Love</h5>
-          </div>
-        </div>
-       </div>
+
+
+
       <!-- <div class="fixed-bottom " id="player" style=" background-color: #f1c40f;">
     <div class="container" >
         <audio id="audio0" data1="" data2="" src="" controls volume loop preload="auto"></audio>
@@ -473,17 +388,6 @@ body {
 </div> -->
 
 <script src="/js/home.js" ></script>
-<script>
-    //player loop
-       var x = document.getElementById("audio0");
 
-       function enableLoop() {
-           x.loop = true;
-       }
-
-       function disableLoop() {
-           x.loop = false;
-       }
-</script>
   </body>
 </html>
