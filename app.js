@@ -94,7 +94,7 @@ var tc = "";
 var album = "";
 
 
-spotifyApi.setAccessToken('BQA4fvbGyOb76NVEi0Kz_yPqwyyVRWv5LXULBEOpcFDhbhXQvXx0Yq0GRRlusOWWCdsuEmy1IUOS9CUaU9NWVD596ZGDQnDHdByKRYrss3zA01pgKVbl4urfwlnybWz4iSsbcL_aL25KdUM8oSkMVka9cwtJ3jRm2ACltRXH_WXnq870A2EdhG95jhSUUd1HsRKHptKcJNARCl1HI3I');
+spotifyApi.setAccessToken('BQC-TXdb5nfLg_7biS_cvlHDFwiKDQZXyFx0FqJkxO98v0Ev5i_hfobn4fgJ0muOAV3mj3deVT4HhylITZFJO-173tlWSxVN6xbeZShVApMvfhJofraP-34f7F9P5E58bu0RBHv_Zua2GUe8rEOcQYJ7_P1Vf41d3OvUdVPXy3jfi7E5az6fqqShu7bLpqmICWBEE2VQY-8_D5KdMNc');
 
 spotifyApi.clientCredentialsGrant().then(
     function (data) {
