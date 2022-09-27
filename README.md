@@ -8,7 +8,7 @@ Mediaworks is a music streaming web application built using Node.js, Express.js 
 Node.js, Express, EJS, Passport.js, MongoDB, CSS, JavaScript, Mongoose, bcrypt.
 
 ## Setup
-1) Download the .zip file or copy the repository on github
+1) Download the .zip file or clone the repository on github
 2) In the config folder create a file and add your mongodb atlas username password and DB_name as follows
   module.exports = {
   MongoURI: 'mongodb+srv://Username:password@cluster0.ge2ev.mongodb.net/DB_name?retryWrites=true&w=majority'
