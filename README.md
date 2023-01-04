@@ -13,5 +13,5 @@ Node.js, Express, EJS, Passport.js, MongoDB, CSS, JavaScript, Mongoose, bcrypt.
   module.exports = {
   MongoURI: 'mongodb+srv://Username:password@cluster0.ge2ev.mongodb.net/DB_name?retryWrites=true&w=majority'
 }
-5) Type node app.js / nodemon app.js
+5) Type node app.js / nodemon app.js on the terminal to run the application
 6) Open localhost on your browser
